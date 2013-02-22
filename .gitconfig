@@ -1,0 +1,21 @@
+[user]
+	name = Julien D'Ascenzio
+	email = jdascenzio@paratronic.fr
+[color]
+	ui = auto
+[alias]
+	logo = log --pretty=oneline --abbrev-commit --graph --decorate --all
+[core]
+	editor = vim
+[pager]
+	diff =
+[merge]
+	tool = diffconflicts
+[mergetool "diffconflicts"]
+	cmd = diffconflicts vimdiff $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = true
+	keepBackup = false
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
