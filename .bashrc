@@ -104,6 +104,3 @@ alias ctagsc='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=
 alias gitcommitall='git commit -a -m WIP ; git logo'
 
 export LS_OPTIONS='-N --color=tty -T 5 --time-style=long-iso'
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/julien/projet/ConfigXml/libconfigxml
-export PATH=$PATH:/home/julien/bin:/home/julien/CodeSourcery/Sourcery_CodeBench_Lite_for_ARM_EABI/bin/:/home/julien/projet/LNS/buildroot/output/host/usr/bin
-
