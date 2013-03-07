@@ -10,12 +10,13 @@
 [pager]
 	diff =
 [merge]
-	tool = diffconflicts
+	tool = kdiff3
 [mergetool "diffconflicts"]
 	cmd = diffconflicts vimdiff $BASE $LOCAL $REMOTE $MERGED
 	trustExitCode = true
 	keepBackup = false
 [diff]
 	tool = vimdiff
+	guitool = kdiff3
 [difftool]
 	prompt = false
