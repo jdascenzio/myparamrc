@@ -7,8 +7,6 @@
 	logo = log --pretty=oneline --abbrev-commit --graph --decorate --all
 [core]
 	editor = vim
-[pager]
-	diff =
 [merge]
 	tool = kdiff3
 [mergetool "diffconflicts"]
