@@ -219,3 +219,5 @@ set history=100
 " set encoding
 set encoding=utf-8
 " set fileencodings=ISO-8859-1,utf-8
+
+let g:netrw_browsex_viewer= "gnome-open"
