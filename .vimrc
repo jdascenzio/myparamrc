@@ -224,3 +224,5 @@ let g:netrw_browsex_viewer= "gnome-open"
 
 " hide by default
 let g:netrw_list_hide="\\(^\\|\\s\\s\\)\\zs\\.\\S\\+"
+
+compiler gcc
