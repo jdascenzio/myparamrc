@@ -98,6 +98,7 @@ endif
 nmap <C-^>t :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <C-^>v :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <F5> :make<CR>
+nnoremap <F7> :let sha=expand("<cword>")<CR>:call GitShow(sha)<CR>
 function! GitShow(sha)
 	let sha = a:sha
 	execute 'vsplit '.sha.'.patch'
