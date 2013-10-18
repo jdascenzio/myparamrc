@@ -221,3 +221,6 @@ set encoding=utf-8
 " set fileencodings=ISO-8859-1,utf-8
 
 let g:netrw_browsex_viewer= "gnome-open"
+
+" hide by default
+let g:netrw_list_hide="\\(^\\|\\s\\s\\)\\zs\\.\\S\\+"
