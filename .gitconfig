@@ -18,3 +18,5 @@
 	guitool = kdiff3
 [difftool]
 	prompt = false
+[push]
+	default = current
