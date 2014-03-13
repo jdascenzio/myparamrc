@@ -97,7 +97,7 @@ endif
 " mes maps
 nmap <C-^>t :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <C-^>v :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-nnoremap <F5> :make<CR>
+nnoremap <F5> :make -j10<CR>
 nnoremap <F6> :make tags<CR>
 nnoremap <F7> :let sha=expand("<cword>")<CR>:call GitShow(sha)<CR>
 function! GitShow(sha)
