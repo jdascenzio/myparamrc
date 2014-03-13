@@ -225,4 +225,8 @@ let g:netrw_browsex_viewer= "gnome-open"
 " hide by default
 let g:netrw_list_hide="\\(^\\|\\s\\s\\)\\zs\\.\\S\\+"
 
+" sort case-insensitive
+let g:netrw_sort_options = "i"
+
 compiler! gcc
+
