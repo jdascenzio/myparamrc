@@ -4,6 +4,7 @@
 [color]
 	ui = auto
 [alias]
+	logoRef = log --pretty=oneline --abbrev-commit --graph --decorate --all --simplify-by-decoration
 	logo = log --pretty=oneline --abbrev-commit --graph --decorate --all
 [core]
 	editor = vim
