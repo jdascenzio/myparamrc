@@ -20,3 +20,5 @@
 	prompt = false
 [push]
 	default = current
+[pull]
+	rebase = true
