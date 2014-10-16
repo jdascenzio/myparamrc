@@ -105,7 +105,7 @@ alias gitcommitall='git commit -a -m WIP ; git logo'
 
 export LS_OPTIONS='-N --color=tty -T 5 --time-style=long-iso'
 
-export PATH=$HOME/local/bin/:$PATH
+export PATH=$HOME/local/bin/:/usr/sbin/:/sbin/:$PATH
 
 shopt -s expand_aliases
 
