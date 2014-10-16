@@ -5,7 +5,11 @@
 	ui = auto
 [alias]
 	logoRef = log --pretty=oneline --abbrev-commit --graph --decorate --all --simplify-by-decoration
-	logo = log --pretty=oneline --abbrev-commit --graph --decorate --all
+	logoa = log --pretty=oneline --abbrev-commit  --decorate --all
+	logoag = log --pretty=oneline --abbrev-commit --graph --decorate --all
+	logoga = log --pretty=oneline --abbrev-commit --graph --decorate --all
+	logog = log --pretty=oneline --abbrev-commit --graph --decorate
+	logo = log --pretty=oneline --abbrev-commit --decorate
 [core]
 	editor = vim
 [merge]
