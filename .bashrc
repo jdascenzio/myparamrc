@@ -146,3 +146,9 @@ cp_p()
 	total_size=$(du -bc "${params[@]}" | awk 'END {print $1}') \
 	count=0
 }
+
+# Opening a new tab in gnome-terminal retains cwd (current path)
+if [ -f /etc/profile.d/vte.sh ]
+then
+	. /etc/profile.d/vte.sh
+fi
