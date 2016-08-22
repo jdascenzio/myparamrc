@@ -106,13 +106,6 @@ function! GitShow(sha)
 	execute '%!git show '.sha
 endfunction
 
-if !exists("autocommands_loaded")
-	let autocommands_loaded = 1
-	augroup C
-		autocmd BufRead *.c,*.h set cindent
-	augroup END
-endif
-
 " syntax highlight
 fu! SYNTAX_C_HL()
     if &expandtab
