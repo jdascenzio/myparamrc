@@ -158,3 +158,6 @@ if [ -f /etc/profile.d/vte.sh ]
 then
 	. /etc/profile.d/vte.sh
 fi
+
+# used 256 color for the terminal
+export TERM='xterm-256color'
