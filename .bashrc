@@ -102,6 +102,8 @@ fi
 # alias ctags
 alias ctagsc='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++'
 alias gitcommitall='git commit -a -m WIP ; git logo'
+alias cross-make='ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make'
+alias cross-qmake='/home/julien/projet/LNS/buildroot/output/host/usr/bin/qmake -r -spec /home/julien/projet/LNS/buildroot/output/host/usr/arm-buildroot-linux-gnueabi/sysroot/usr/mkspecs/qws/linux-arm-g++'
 
 export LS_OPTIONS='-N --color=tty -T 5 --time-style=long-iso'
 
