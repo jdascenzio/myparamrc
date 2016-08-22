@@ -213,7 +213,7 @@ call CS_adeneo()
 
 " interactive shell to get bash aliases
 "set shell=/bin/bash\ --rcfile\ ~/.bash_profile
-set shell=/bin/bash\ --login
+set shell=bash
 
 " exVim
 "let $EX_DEV = '~/exDev'
