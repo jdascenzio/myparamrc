@@ -174,8 +174,14 @@ fu! CS_ws()
         call SYNTAX_C_HL()
 endf
 
-
-
+" python
+autocmd Filetype python set tabstop=4
+autocmd Filetype python set softtabstop=4
+autocmd Filetype python set shiftwidth=4
+autocmd Filetype python set textwidth=79
+autocmd FileType python set expandtab
+autocmd FileType python set autoindent
+autocmd FileType python set fileformat=unix
 
 " ucarp
 "set softtabstop=4
