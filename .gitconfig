@@ -20,7 +20,7 @@
 	trustExitCode = true
 	keepBackup = false
 [diff]
-	tool = vimdiff
+	tool = vimdiff3
 	guitool = kdiff3
 [difftool]
 	prompt = false
