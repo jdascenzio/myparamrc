@@ -112,6 +112,9 @@ export PATH=$HOME/local/bin:$HOME/soft/git-achievements:/sbin:$PATH
 shopt -s expand_aliases
 
 alias git='LANG=en_US.UTF-8 git-achievements'
+source $HOME/soft/git/contrib/completion/git-prompt.sh
+source $HOME/soft/git/contrib/completion/git-completion.bash
+
 cp_p()
 {
 	local params=( "$@" )
