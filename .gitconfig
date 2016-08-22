@@ -28,3 +28,5 @@
 	default = current
 [pull]
 	rebase = true
+[achievement]
+	upload = true
