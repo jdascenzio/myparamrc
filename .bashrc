@@ -111,6 +111,7 @@ export PATH=$HOME/local/bin:$HOME/soft/git-achievements:/sbin:$PATH
 
 shopt -s expand_aliases
 
+alias git='LANG=en_US.UTF-8 git-achievements'
 cp_p()
 {
 	local params=( "$@" )
