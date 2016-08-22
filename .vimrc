@@ -19,13 +19,12 @@ runtime! debian.vim
 " line enables syntax highlighting by default.
 syntax on
 
-" If using a dark background within the editing area and syntax highlighting
-" turn on this option as well
-if has("gui_running")
-  set background=light
-else
-  set background=dark
-endif
+let g:zenburn_alternate_Error=1
+let g:zenburn_high_Contrast=1
+let g:zenburn_old_Visual = 1
+let g:zenburn_alternate_Visual = 1
+
+colors zenburn
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
