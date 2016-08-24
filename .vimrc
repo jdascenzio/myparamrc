@@ -226,5 +226,9 @@ let g:netrw_list_hide="\\(^\\|\\s\\s\\)\\zs\\.\\S\\+"
 " sort case-insensitive
 let g:netrw_sort_options = "i"
 
+" If 'cscopetag' is set, the commands ":tag" and CTRL-] as well as "vim -t"
+" will always use :cstag instead of the default :tag behavior
+set cscopetag
+
 compiler! gcc
 
