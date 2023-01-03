@@ -81,7 +81,7 @@ fi
 # some more ls aliases
 alias ll='ls -l'
 alias la='ls -lA'
-#alias l='ls -CF'
+# alias l='ls -CF'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -103,17 +103,21 @@ fi
 alias ctagsc='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++'
 alias gitcommitall='git commit -a -m WIP ; git logo'
 alias cross-make='ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make'
+alias cross-make-lns='ARCH=arm CROSS_COMPILE=/home/julien/projet/LNS/buildroot/output/host/usr/bin/arm-buildroot-linux-gnueabi- make'
+alias cross-make-atlas='ARCH=arm CROSS_COMPILE=/home/julien/mnt/ssd_1_to/projet/atlas/atlas_master_project/buildroot/output/host/usr/bin/arm-buildroot-linux-gnueabihf- make'
 alias cross-qmake='/home/julien/projet/LNS/buildroot/output/host/usr/bin/qmake -r -spec /home/julien/projet/LNS/buildroot/output/host/usr/arm-buildroot-linux-gnueabi/sysroot/usr/mkspecs/qws/linux-arm-g++'
+alias win-qmake='/home/julien/mnt/misc/mxe/usr/i686-w64-mingw32.static/qt5/bin/qmake'
+alias tp='trash-put'*
 
 export LS_OPTIONS='-N --color=tty -T 5 --time-style=long-iso'
 
-export PATH=$HOME/local/bin:$HOME/soft/git-achievements:/sbin:$PATH
+export PATH="$HOME/.local/bin:$HOME/local/bin:/sbin:/usr/sbin:$PATH:/home/julien/mnt/misc/mxe/usr/bin"
 
 shopt -s expand_aliases
 
-alias git='LANG=en_US.UTF-8 git-achievements'
-source $HOME/soft/git/contrib/completion/git-prompt.sh
-source $HOME/soft/git/contrib/completion/git-completion.bash
+alias git='git'
+source /usr/share/bash-completion/completions/git
+source /usr/share/bash-completion/completions/gitk
 
 cp_p()
 {
@@ -153,6 +157,17 @@ cp_p()
 	count=0
 }
 
+para_debug()
+{
+	export LOG_TO_CONSOLE=yes
+}
+
+para_debug_atlas()
+{
+	export CROSS_COMPILE=/home/julien/mnt/misc/atlas/atlas_master_project/buildroot/output/host/usr/bin/arm-buildroot-linux-gnueabihf-
+	export ARCH=arm
+}
+
 # Opening a new tab in gnome-terminal retains cwd (current path)
 if [ -f /etc/profile.d/vte.sh ]
 then
@@ -160,4 +175,12 @@ then
 fi
 
 # used 256 color for the terminal
-export TERM='xterm-256color'
+# export TERM='xterm-256color'
+
+tabs -4
+
+#export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
+#export ZEPHYR_SDK_INSTALL_DIR=~/zephyr-sdk
+#export ZEPHYR_SDK_INSTALL_DIR=~/zephyr-sdk-0.11.2
+#export ZEPHYR_BASE=~/projet/sonde_forage/sfp_cond_workspace/zephyr
+cat ~/.ssh/id_rsa | SSH_ASKPASS="$HOME/.passfile" ssh-add - &>/dev/null

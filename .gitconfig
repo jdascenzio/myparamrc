@@ -1,6 +1,6 @@
 [user]
-	name = Julien D'Ascenzio
-	email = jdascenzio@paratronic.fr
+	name = Julien D'ascenzio
+	email = Julien.Dascenzio@paratronic.fr
 [color]
 	ui = auto
 [alias]
@@ -11,6 +11,7 @@
 	logog = log --pretty=oneline --abbrev-commit --graph --decorate
 	logo = log --pretty=oneline --abbrev-commit --decorate
 [core]
+	attributesFile = ~/.gitattributes
 	editor = vim
 	pager = less -x3
 [merge]
@@ -22,6 +23,33 @@
 [diff]
 	tool = vimdiff3
 	guitool = kdiff3
+[diff "hexa"]
+	binary = true
+	textconv = hexdump -v -C
+[diff "db"]
+	binary = true
+	textconv = "echo .dump | sqlite3"
+[diff "zip"]
+  textconv = unzip -p
+  binary = true
+[diff "bz2"]
+  textconv = bzcat
+  binary = true
+[diff "xz"]
+  textconv = xzcat
+  binary = true
+[diff "tar"]
+	textconv = tar -O -xf
+	binary = true
+[diff "tar-bz2"]
+  textconv = tar -O -xjf
+  binary = true
+[diff "tar-gz"]
+  textconv = tar -O -xzf
+  binary = true
+[diff "tar-xz"]
+  textconv = tar -O -xJf
+  binary = true
 [difftool]
 	prompt = false
 [push]
@@ -30,3 +58,12 @@
 	rebase = true
 [achievement]
 	upload = true
+[http]
+	sslVerify = false
+	sslCAinfo = /etc/ssl/certs/ca-certificates.crt
+[sendemail]
+	smtpserver = localhost
+	smtpUser = PR\\j.dascenzio
+	smtpserverport = 1025
+[help]
+	autoCorrect = 1
