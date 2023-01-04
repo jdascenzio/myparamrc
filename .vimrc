@@ -2,9 +2,15 @@ packadd! CtrlP
 packadd! gitgutter
 packadd! bufexplorer
 packadd! omnicppcomplete
+packadd! color_sampler_pack
 packadd! po
 
 syntax on
+
+let g:airline_theme='ubaryd'
+
+" run buffer explorer on <c-p>
+let g:ctrlp_cmd = 'CtrlPBuffer'
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -15,12 +21,18 @@ if has("autocmd")
   filetype indent on
 endif
 
+" for gitgutter work faster
+set updatetime=100
+
 " completion
 
 set nocp
 filetype plugin on
 
-set tags+=~/.vim/tags/linux
+" automatically open and close the popup menu / preview window
+set completeopt=menuone,menu,longest
+
+set tags+=~/.vim/tags/linux.tags
 set incsearch		" Incremental search
 set hlsearch		" highlight search
 set autowrite		" Automatically save before commands like :next and :make
@@ -37,7 +49,7 @@ function! GitShow(sha)
 endfunction
 
 function! GenerateLinuxTags()
-	execute ':!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q	--language-force=C++ -f ~/.vim/tags/linux.tags /usr/include/linux/ /usr/include/stdlib.h /usr/include/string.h /usr/include/sys/'
+	execute ':!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q	--language-force=C++ -f ~/.vim/tags/linux.tags /usr/include/linux/ /usr/include/stdlib.h /usr/include/string.h /usr/include/sys/ /usr/include/net/'
 endfunction
 
 " syntax highlight
@@ -96,3 +108,5 @@ let g:netrw_list_hide="\\(^\\|\\s\\s\\)\\zs\\.\\S\\+"
 
 " sort case-insensitive
 let g:netrw_sort_options = "i"
+
+call CS_zephyr()
