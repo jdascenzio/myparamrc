@@ -2,10 +2,14 @@ packadd! CtrlP
 packadd! gitgutter
 packadd! bufexplorer
 packadd! omnicppcomplete
-packadd! color_sampler_pack
+" packadd! color_sampler_pack
 packadd! po
 
 syntax on
+
+" If 'cscopetag' is set, the commands ":tag" and CTRL-] as well as "vim -t"
+" will always use :cstag instead of the default :tag behavior
+set cscopetag
 
 let g:airline_theme='ubaryd'
 
@@ -21,9 +25,13 @@ if has("autocmd")
   filetype indent on
 endif
 
-" for gitgutter work faster
-set updatetime=100
+set background=dark
+let g:gruvbox_italic=1
+autocmd vimenter * ++nested colorscheme gruvbox
 
+" for gitgutter work faster
+set updatetime=500
+	
 " completion
 
 set nocp
