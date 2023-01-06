@@ -11,11 +11,12 @@ syntax on
 " will always use :cstag instead of the default :tag behavior
 set cscopetag
 
-let g:airline_theme='ubaryd'
+let g:airline_theme='gruvbox'
 
 " run buffer explorer on <c-p>
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
+" Set cursor to the last postion
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
@@ -27,7 +28,7 @@ endif
 
 set background=dark
 let g:gruvbox_italic=1
-autocmd vimenter * ++nested colorscheme gruvbox
+colorscheme gruvbox
 
 " for gitgutter work faster
 set updatetime=500
@@ -40,7 +41,6 @@ filetype plugin on
 " automatically open and close the popup menu / preview window
 set completeopt=menuone,menu,longest
 
-set tags+=~/.vim/tags/linux.tags
 set incsearch		" Incremental search
 set hlsearch		" highlight search
 set autowrite		" Automatically save before commands like :next and :make
@@ -59,6 +59,8 @@ endfunction
 function! GenerateLinuxTags()
 	execute ':!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q	--language-force=C++ -f ~/.vim/tags/linux.tags /usr/include/linux/ /usr/include/stdlib.h /usr/include/string.h /usr/include/sys/ /usr/include/net/'
 endfunction
+
+set tags+=~/.vim/tags/linux.tags
 
 " syntax highlight
 fu! SYNTAX_C_HL()
@@ -110,9 +112,6 @@ endf
 set history=100
 
 let g:netrw_browsex_viewer= "gnome-open"
-
-" hide by default
-let g:netrw_list_hide="\\(^\\|\\s\\s\\)\\zs\\.\\S\\+"
 
 " sort case-insensitive
 let g:netrw_sort_options = "i"
