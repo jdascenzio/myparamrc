@@ -220,7 +220,7 @@ bar {
 focus_follows_mouse no
 
 # lock pc
-bindsym $mod+l exec "i3lock -c 000000"
+bindsym $mod+l exec "i3lock -c 73D216"
 
 # lock pc and suspend
-bindsym $mod+Shift+l exec "i3lock -c 000000; sleep 1; systemctl suspend"
+bindsym $mod+Shift+l exec "i3lock -c 73D216; sleep 1; systemctl suspend"

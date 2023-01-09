@@ -102,6 +102,17 @@ fu! CS_zephyr()
 	highlight ColorColumn ctermbg=lightgrey
 endf
 
+fu! P_CrossCompileAtlas()
+	call CS_paratronic()
+	let $CROSS_COMPILE='/home/julien/mnt/ssd_1_to/projet/atlas/atlas_master_project/buildroot/output/host/usr/bin/arm-buildroot-linux-gnueabihf-'
+	let $ARCH='arm'
+endf
+
+fu! P_CrossCompileReset()
+	unlet $CROSS_COMPILE
+	unlet $ARCH
+endf
+
 fu! CleanCode()
 	%s/
 \+//g
