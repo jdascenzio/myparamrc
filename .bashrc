@@ -107,6 +107,7 @@ alias cross-make-lns='ARCH=arm CROSS_COMPILE=/home/julien/projet/LNS/buildroot/o
 alias cross-make-atlas='ARCH=arm CROSS_COMPILE=/home/julien/mnt/ssd_1_to/projet/atlas/atlas_master_project/buildroot/output/host/usr/bin/arm-buildroot-linux-gnueabihf- make'
 alias cross-qmake='/home/julien/projet/LNS/buildroot/output/host/usr/bin/qmake -r -spec /home/julien/projet/LNS/buildroot/output/host/usr/arm-buildroot-linux-gnueabi/sysroot/usr/mkspecs/qws/linux-arm-g++'
 alias win-qmake='/home/julien/mnt/misc/mxe/usr/i686-w64-mingw32.static/qt5/bin/qmake'
+alias gk='gitk --all'
 alias tp='trash-put'*
 
 export LS_OPTIONS='-N --color=tty -T 5 --time-style=long-iso'

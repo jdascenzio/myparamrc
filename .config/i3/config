@@ -77,6 +77,10 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# start a calculator
+bindsym $mod+c exec mate-calc
+for_window [class="Mate-calc"] floating enable
+
 # kill focused window
 bindsym $mod+Shift+a kill
 
@@ -134,6 +138,9 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+q focus parent
+
+# Change current windows name
+bindsym Mod4+Shift+n --release exec bash -c 'current_workspace=$(i3-msg -t get_workspaces | jq ".[] | select(.focused==true).num") && i3-input -F "rename workspace to \"$current_workspace:%s\"" -P "Nouveau nom : "'
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -213,7 +220,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-		tray_output DVI-0
+#        status_command i3blocks
+	tray_output DVI-0
 }
 
 # Disable focus follows mouse

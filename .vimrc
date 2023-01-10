@@ -2,6 +2,7 @@ packadd! CtrlP
 packadd! gitgutter
 packadd! bufexplorer
 packadd! omnicppcomplete
+packadd! xmledit
 " packadd! color_sampler_pack
 packadd! po
 
@@ -29,6 +30,10 @@ endif
 set background=dark
 let g:gruvbox_italic=1
 colorscheme gruvbox
+
+set foldmethod=syntax
+let c_no_comment_fold = 1
+set foldlevel=99
 
 " for gitgutter work faster
 set updatetime=500
