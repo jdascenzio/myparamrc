@@ -17,6 +17,8 @@ font pango:monospace 10
 
 exec_always --no-startup-id setxkbmap fr
 
+exec --no-startup-id xrandr --output DVI-0 --primary --left-of VGA-0
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -40,6 +42,12 @@ exec --no-startup-id davmail
 
 # terminal
 exec --no-startup-id i3-msg 'workspace 1:Termial; exec mate-terminal'
+
+# Virtual box for windows
+exec --no-startup-id i3-msg 'workspace 5:Win; exec virtualbox'
+
+# Office
+exec --no-startup-id i3-msg 'workspace 6:Office; exec libreoffice'
 
 # Mail
 exec --no-startup-id i3-msg 'workspace 7:Mail; exec thunderbird'
@@ -84,8 +92,12 @@ for_window [class="Mate-calc"] floating enable
 # kill focused window
 bindsym $mod+Shift+a kill
 
+# start calendar
+bindsym $mod+d exec --no-startup-id zenity --calendar
+
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+#bindsym $mod+d exec --no-startup-id dmenu_run
+
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -188,6 +200,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# display a menu
+bindsym $mod+m exec --no-startup-id rofi -show drun -show-icons
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

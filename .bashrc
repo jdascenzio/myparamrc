@@ -4,7 +4,7 @@
 
 # If not running interactively, don't do anything
 # yes, i want colors, aliases etc...
-#[ -z "$PS1" ] && return
+[ -z "$PS1" ] && return
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
@@ -51,9 +51,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[01;33m\]\$(__git_ps1)\[\033[00m\] "
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[01;33m\]$(__git_ps1)\[\033[00m\] '
 else
-    PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$(__git_ps1) "
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1) '
 fi
 unset color_prompt force_color_prompt
 
@@ -109,10 +109,11 @@ alias cross-qmake='/home/julien/projet/LNS/buildroot/output/host/usr/bin/qmake -
 alias win-qmake='/home/julien/mnt/misc/mxe/usr/i686-w64-mingw32.static/qt5/bin/qmake'
 alias gk='gitk --all'
 alias tp='trash-put'*
+alias gl='git log --pretty=oneline --abbrev-commit --graph --decorate --all -n30'
 
 export LS_OPTIONS='-N --color=tty -T 5 --time-style=long-iso'
 
-export PATH="$HOME/.local/bin:$HOME/local/bin:/sbin:/usr/sbin:$PATH:/home/julien/mnt/misc/mxe/usr/bin"
+export PATH="/snap/bin/:$HOME/.local/bin:$HOME/local/bin:/sbin:/usr/sbin:$PATH:/home/julien/mnt/misc/mxe/usr/bin"
 
 shopt -s expand_aliases
 
