@@ -17,7 +17,7 @@ font pango:monospace 10
 
 exec_always --no-startup-id setxkbmap fr
 
-exec --no-startup-id xrandr --output DVI-0 --primary --left-of VGA-0
+exec --no-startup-id xrandr --output DVI-0 --primary --left-of HDMI-0 --output HDMI-0 -o left
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -40,37 +40,43 @@ exec --no-startup-id redshift-gtk
 # davmail
 exec --no-startup-id davmail
 
+# Virtual box for windows
+assign [class="VirtualBox Manager"] "5:Win"
+exec --no-startup-id virtualbox
+
+# Office
+assign [class="libreoffice-startcenter"] "6:Office"
+exec --no-startup-id libreoffice
+
+# Mail
+assign [class="thunderbird-default"] "7:Mail"
+exec --no-startup-id thunderbird
+
+# slack
+assign [class="Slack"] "8:Slack"
+exec --no-startup-id slack
+
+# caja
+assign [class="Caja"] "9:File manager"
+exec --no-startup-id caja
+
+# firefox
+assign [class="firefox"] "10:Web"
+exec --no-startup-id /opt/firefox/firefox
+
 # terminal
 exec --no-startup-id i3-msg 'workspace 1:Termial; exec mate-terminal'
 
-# Virtual box for windows
-exec --no-startup-id i3-msg 'workspace 5:Win; exec virtualbox'
-
-# Office
-exec --no-startup-id i3-msg 'workspace 6:Office; exec libreoffice'
-
-# Mail
-exec --no-startup-id i3-msg 'workspace 7:Mail; exec thunderbird'
-
-# slack
-exec --no-startup-id i3-msg 'workspace 8:Slack; exec slack'
-
-# caja
-exec --no-startup-id i3-msg 'workspace 9:File manager; exec caja'
-
-# firefox
-exec --no-startup-id i3-msg 'workspace 10:Web; exec /opt/firefox/firefox'
-
 workspace 1 output DVI-0
-workspace 2 output VGA-0
-workspace 3 output VGA-0
-workspace 4 output VGA-0
-workspace 5 output VGA-0
-workspace 6 output VGA-0
-workspace 7 output VGA-0
-workspace 8 output VGA-0
-workspace 9 output VGA-0
-workspace 10 output VGA-0
+workspace 2 output HDMI-0
+workspace 3 output HDMI-0
+workspace 4 output HDMI-0
+workspace 5 output HDMI-0
+workspace 6 output HDMI-0
+workspace 7 output HDMI-0
+workspace 8 output HDMI-0
+workspace 9 output HDMI-0
+workspace 10 output HDMI-0
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

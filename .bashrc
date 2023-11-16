@@ -106,7 +106,10 @@ alias cross-make='ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make'
 alias cross-make-lns='ARCH=arm CROSS_COMPILE=/home/julien/projet/LNS/buildroot/output/host/usr/bin/arm-buildroot-linux-gnueabi- make'
 alias cross-make-atlas='ARCH=arm CROSS_COMPILE=/home/julien/mnt/ssd_1_to/projet/atlas/atlas_master_project/buildroot/output/host/usr/bin/arm-buildroot-linux-gnueabihf- make'
 alias cross-qmake='/home/julien/projet/LNS/buildroot/output/host/usr/bin/qmake -r -spec /home/julien/projet/LNS/buildroot/output/host/usr/arm-buildroot-linux-gnueabi/sysroot/usr/mkspecs/qws/linux-arm-g++'
+alias cross-qmake-atlas='/home/julien/mnt/ssd_1_to/projet/atlas/atlas_master_project/buildroot/output/host/usr/bin/qmake -r -spec /home/julien/mnt/ssd_1_to/projet/atlas/atlas_master_project/buildroot/output/host/mkspecs/devices/linux-buildroot-g++'
 alias win-qmake='/home/julien/mnt/misc/mxe/usr/i686-w64-mingw32.static/qt5/bin/qmake'
+ATLAS_PATH=/home/julien/mnt/ssd_1_to/projet/atlas/atlas_master_project/
+alias qmake-atlas='QMAKEPATH=$ATLAS_PATH/buildroot/output/staging/usr/ NODEMO=1 $ATLAS_PATH/buildroot/output/host/usr/bin/qmake'
 alias gk='gitk --all'
 alias tp='trash-put'*
 alias gl='git log --pretty=oneline --abbrev-commit --graph --decorate --all -n30'

@@ -1,12 +1,37 @@
+set nocompatible      " Nécessaire
+filetype off          " Nécessaire
+
+" Ajout de Vundle au runtime path et initialisation
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" On indique à Vundle de s'auto-gérer :)
+Plugin 'gmarik/Vundle.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'stephpy/vim-php-cs-fixer'
+
+call vundle#end()            " Nécessaire
+filetype plugin indent on    " Nécessaire
+
 packadd! CtrlP
 packadd! gitgutter
 packadd! bufexplorer
-packadd! omnicppcomplete
+packadd! python-jedi
+" packadd! youcompleteme
+" packadd! omnicppcomplete
 packadd! xmledit
 " packadd! color_sampler_pack
-packadd! po
+" packadd! po
 
 syntax on
+
+" for php code checking
+let g:php_cs_fixer_path = "/home/julien/soft/php-cs-fixer/vendor/bin/php-cs-fixer"
+
+" set special string "<Leader>" to ','
+let mapleader=","
+let maplocalleader=","
 
 " If 'cscopetag' is set, the commands ":tag" and CTRL-] as well as "vim -t"
 " will always use :cstag instead of the default :tag behavior
@@ -90,6 +115,12 @@ fu! CS_paratronic()
 	noremap <F7> :make flash<CR>
 endf
 
+fu! CS_php()
+	set tabstop=4
+	set shiftwidth=4
+ 	set expandtab
+endf
+
 fu! CS_zephyr()
 	set noexpandtab                         " use tabs, not spaces
 	set tabstop=8                           " tabstops of 8
@@ -99,12 +130,18 @@ fu! CS_zephyr()
 	set formatoptions=tcqlron
 	set cindent
 	set cinoptions=:0,l1,t0,g0,(0
-	set makeprg=west\ build
-	noremap <F5> :make<CR>
-	noremap <F6> :!west tags<CR>
-	noremap <F7> :!west flash<CR>
+	set makeprg=source\ /home/julien/zephyrproject/.venv/bin/activate;west\ build\ -t
+	noremap <F5> :make all<CR>
+	noremap <F6> :!source /home/julien/zephyrproject/.venv/bin/activate;west tags<CR>
+	noremap <F7> :!source /home/julien/zephyrproject/.venv/bin/activate;west flash<CR>
 	set colorcolumn=+1
 	highlight ColorColumn ctermbg=lightgrey
+endf
+
+fu! CS_adelie()
+	call CS_paratronic()
+	set makeprg=docker\ exec\ -w\ /opt/paratronic/paratronic/adelie_detection\ -it\ debian_adelie\ bash\ -c\ \"export\ GCC_COLORS=\"\";source\ adelie_env_arm.sh;\ make\ -j20\"
+    noremap <F6> :!make tags<CR>
 endf
 
 fu! P_CrossCompileAtlas()
