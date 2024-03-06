@@ -40,6 +40,9 @@ exec --no-startup-id redshift-gtk
 # davmail
 exec --no-startup-id davmail
 
+# linphone
+exec --no-startup-id linphone
+
 # Virtual box for windows
 assign [class="VirtualBox Manager"] "5:Win"
 exec --no-startup-id virtualbox

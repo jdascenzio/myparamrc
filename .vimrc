@@ -130,10 +130,10 @@ fu! CS_zephyr()
 	set formatoptions=tcqlron
 	set cindent
 	set cinoptions=:0,l1,t0,g0,(0
-	set makeprg=source\ /home/julien/zephyrproject/.venv/bin/activate;west\ build\ -t
+	set makeprg=west\ build\ -t
 	noremap <F5> :make all<CR>
-	noremap <F6> :!source /home/julien/zephyrproject/.venv/bin/activate;west tags<CR>
-	noremap <F7> :!source /home/julien/zephyrproject/.venv/bin/activate;west flash<CR>
+	noremap <F6> :!west tags<CR>
+	noremap <F7> :!west flash<CR>
 	set colorcolumn=+1
 	highlight ColorColumn ctermbg=lightgrey
 endf

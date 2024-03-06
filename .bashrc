@@ -188,4 +188,5 @@ tabs -4
 #export ZEPHYR_SDK_INSTALL_DIR=~/zephyr-sdk
 #export ZEPHYR_SDK_INSTALL_DIR=~/zephyr-sdk-0.11.2
 #export ZEPHYR_BASE=~/projet/sonde_forage/sfp_cond_workspace/zephyr
+# Start SSH agent
 cat ~/.ssh/id_rsa | SSH_ASKPASS="$HOME/.passfile" ssh-add - &>/dev/null
