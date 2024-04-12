@@ -190,3 +190,5 @@ tabs -4
 #export ZEPHYR_BASE=~/projet/sonde_forage/sfp_cond_workspace/zephyr
 # Start SSH agent
 cat ~/.ssh/id_rsa | SSH_ASKPASS="$HOME/.passfile" ssh-add - &>/dev/null
+
+export EMAIL=jdascenzio@paratronic.fr

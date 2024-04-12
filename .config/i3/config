@@ -17,7 +17,7 @@ font pango:monospace 10
 
 exec_always --no-startup-id setxkbmap fr
 
-exec --no-startup-id xrandr --output DVI-0 --primary --left-of HDMI-0 --output HDMI-0 -o left
+exec --no-startup-id xrandr --output DP-4 --primary --left-of DP-6 --output DP-6 -o left
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -70,16 +70,16 @@ exec --no-startup-id /opt/firefox/firefox
 # terminal
 exec --no-startup-id i3-msg 'workspace 1:Termial; exec mate-terminal'
 
-workspace 1 output DVI-0
-workspace 2 output HDMI-0
-workspace 3 output HDMI-0
-workspace 4 output HDMI-0
-workspace 5 output HDMI-0
-workspace 6 output HDMI-0
-workspace 7 output HDMI-0
-workspace 8 output HDMI-0
-workspace 9 output HDMI-0
-workspace 10 output HDMI-0
+workspace 1 output DP-4
+workspace 2 output DP-6
+workspace 3 output DP-6
+workspace 4 output DP-6
+workspace 5 output DP-6
+workspace 6 output DP-6
+workspace 7 output DP-6
+workspace 8 output DP-6
+workspace 9 output DP-6
+workspace 10 output DP-6
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -244,7 +244,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 #        status_command i3blocks
-	tray_output DVI-0
+	tray_output DP-4
 }
 
 # Disable focus follows mouse

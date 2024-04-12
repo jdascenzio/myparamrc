@@ -146,7 +146,21 @@ endf
 
 fu! P_CrossCompileAtlas()
 	call CS_paratronic()
+	set noexpandtab                         " use tabs, not spaces
+	set tabstop=8                           " tabstops of 8
+	set shiftwidth=8                        " indents of 8
+	set softtabstop=8
 	let $CROSS_COMPILE='/home/julien/mnt/ssd_1_to/projet/atlas/atlas_master_project/buildroot/output/host/usr/bin/arm-buildroot-linux-gnueabihf-'
+	let $ARCH='arm'
+endf
+
+fu! P_CrossCompileLNS()
+	call CS_paratronic()
+	set noexpandtab                         " use tabs, not spaces
+	set tabstop=8                           " tabstops of 8
+	set shiftwidth=8                        " indents of 8
+	set softtabstop=8
+	let $CROSS_COMPILE='/home/julien/projet/LNS/buildroot/output/host/usr/bin/arm-buildroot-linux-gnueabi-'
 	let $ARCH='arm'
 endf
 
