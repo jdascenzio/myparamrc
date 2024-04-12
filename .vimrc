@@ -150,7 +150,7 @@ fu! P_CrossCompileAtlas()
 	set tabstop=8                           " tabstops of 8
 	set shiftwidth=8                        " indents of 8
 	set softtabstop=8
-	let $CROSS_COMPILE='/home/julien/mnt/ssd_1_to/projet/atlas/atlas_master_project/buildroot/output/host/usr/bin/arm-buildroot-linux-gnueabihf-'
+	let $CROSS_COMPILE='/media/data/projet/atlas/atlas_master_project/buildroot/output/host/usr/bin/arm-buildroot-linux-gnueabihf-'
 	let $ARCH='arm'
 endf
 
