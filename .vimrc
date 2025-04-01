@@ -10,6 +10,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'stephpy/vim-php-cs-fixer'
+Plugin 'lumiliet/vim-twig'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()            " Nécessaire
 filetype plugin indent on    " Nécessaire
@@ -17,7 +19,8 @@ filetype plugin indent on    " Nécessaire
 packadd! CtrlP
 packadd! gitgutter
 packadd! bufexplorer
-packadd! python-jedi
+packadd! nerd-commenter
+" packadd! python-jedi
 " packadd! youcompleteme
 " packadd! omnicppcomplete
 packadd! xmledit
@@ -113,9 +116,17 @@ fu! CS_paratronic()
 	noremap <F5> :make<CR>
 	noremap <F6> :make tags<CR>
 	noremap <F7> :make flash<CR>
+	unlet $CROSS_COMPILE
+	unlet $ARCH
 endf
 
 fu! CS_php()
+	set tabstop=4
+	set shiftwidth=4
+ 	set expandtab
+endf
+
+fu! CS_js()
 	set tabstop=4
 	set shiftwidth=4
  	set expandtab
@@ -147,9 +158,6 @@ endf
 fu! P_CrossCompileAtlas()
 	call CS_paratronic()
 	set noexpandtab                         " use tabs, not spaces
-	set tabstop=8                           " tabstops of 8
-	set shiftwidth=8                        " indents of 8
-	set softtabstop=8
 	let $CROSS_COMPILE='/media/data/projet/atlas/atlas_master_project/buildroot/output/host/usr/bin/arm-buildroot-linux-gnueabihf-'
 	let $ARCH='arm'
 endf
@@ -170,8 +178,7 @@ fu! P_CrossCompileReset()
 endf
 
 fu! CleanCode()
-	%s/
-\+//g
+	%s/\+//g
 	%s/[	 ]\+$//
 endf
 

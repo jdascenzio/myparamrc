@@ -64,8 +64,8 @@ assign [class="Caja"] "9:File manager"
 exec --no-startup-id caja
 
 # firefox
-assign [class="firefox"] "10:Web"
-exec --no-startup-id /opt/firefox/firefox
+assign [class="Brave-browser"] "10:Web"
+exec --no-startup-id brave-browser
 
 # terminal
 exec --no-startup-id i3-msg 'workspace 1:Termial; exec mate-terminal'
