@@ -45,6 +45,10 @@ let g:airline_theme='gruvbox'
 " run buffer explorer on <c-p>
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
+" To view fault
+autocmd ColorScheme * highlight SpellBad cterm=underline ctermfg=red gui=underline guifg=red
+autocmd FileType markdown setlocal spell spelllang=fr
+
 " Set cursor to the last postion
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -109,6 +113,7 @@ endf
 fu! CS_paratronic()
 	set tabstop=4
 	set shiftwidth=4
+	set softtabstop=4
  	set noexpandtab
 	set cinoptions=(0
         call SYNTAX_C_HL()
@@ -123,12 +128,14 @@ endf
 fu! CS_php()
 	set tabstop=4
 	set shiftwidth=4
+	set softtabstop=4
  	set expandtab
 endf
 
 fu! CS_js()
 	set tabstop=4
 	set shiftwidth=4
+	set softtabstop=4
  	set expandtab
 endf
 
