@@ -116,7 +116,7 @@ alias gl='git log --pretty=oneline --abbrev-commit --graph --decorate --all -n30
 
 export LS_OPTIONS='-N --color=tty -T 5 --time-style=long-iso'
 
-export PATH="/snap/bin/:$HOME/.local/bin:$HOME/local/bin:/sbin:/usr/sbin:$PATH:/home/julien/mnt/misc/mxe/usr/bin"
+export PATH="/snap/bin/:$HOME/.cargo/bin/:$HOME/.local/bin:$HOME/local/bin:/sbin:/usr/sbin:$PATH:/home/julien/mnt/misc/mxe/usr/bin"
 
 shopt -s expand_aliases
 
@@ -192,3 +192,21 @@ tabs -4
 cat ~/.ssh/id_rsa | SSH_ASKPASS="$HOME/.passfile" ssh-add - &>/dev/null
 
 export EMAIL=jdascenzio@paratronic.fr
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export STM32_PRG_PATH=/home/julien/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin
+
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    AGENT_NAME=$(find /tmp -type s -user "$USER" -name 'agent.*' 2>/dev/null)
+
+    if [ -z "$AGENT_NAME" ]; then
+        echo "No running ssh-agent socket found for user $USER."
+    else
+        SOCK=$(ls -t "$AGENT_NAME" 2>/dev/null | head -n 1)
+    fi
+
+    export SSH_AUTH_SOCK="$SOCK"
+fi
