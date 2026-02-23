@@ -100,7 +100,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # alias ctags
-alias ctagsc='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++'
+alias ctagsc='ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --language-force=C++'
 alias gitcommitall='git commit -a -m WIP ; git logo'
 alias cross-make='ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make'
 alias cross-make-lns='ARCH=arm CROSS_COMPILE=/home/julien/projet/LNS/buildroot/output/host/usr/bin/arm-buildroot-linux-gnueabi- make'
