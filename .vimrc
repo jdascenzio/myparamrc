@@ -94,7 +94,7 @@ function! GitShow(sha)
 endfunction
 
 function! GenerateLinuxTags()
-	execute ':!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q	--language-force=C++ -f ~/.vim/tags/linux.tags /usr/include/linux/ /usr/include/stdlib.h /usr/include/string.h /usr/include/sys/ /usr/include/net/'
+	execute ':!ctags -R --c++-kinds=+p --fields=+iaS --extras=+q	--language-force=C++ -f ~/.vim/tags/linux.tags /usr/include/linux/ /usr/include/stdlib.h /usr/include/string.h /usr/include/sys/ /usr/include/net/'
 endfunction
 
 set tags+=~/.vim/tags/linux.tags
@@ -158,15 +158,19 @@ endf
 
 fu! CS_adelie()
 	call CS_paratronic()
-	set makeprg=docker\ exec\ -w\ /opt/paratronic/paratronic/adelie_detection\ -it\ debian_adelie\ bash\ -c\ \"export\ GCC_COLORS=\"\";source\ adelie_env_arm.sh;\ make\ -j20\"
-    noremap <F6> :!make tags<CR>
+	let &makeprg='docker run --rm -e ARCH=arm -e CROSS_COMPILE=arm-linux-gnueabihf- -v ' . getcwd() . ':/opt/paratronic --user ' . trim(system('id -u')) . ':' . trim(system('id -g')) . ' --entrypoint make debian_adelie'
 endf
 
 fu! P_CrossCompileAtlas()
 	call CS_paratronic()
 	set noexpandtab                         " use tabs, not spaces
-	let $CROSS_COMPILE='/media/data/projet/atlas/atlas_master_project/buildroot/output/host/usr/bin/arm-buildroot-linux-gnueabihf-'
+	let $CROSS_COMPILE='/media/data/projet/atlas/atlas_master_project/buildroot/output/host/usr/bin/arm-linux-'
 	let $ARCH='arm'
+endf
+
+fu! P_CrossCompileAtlas_1_3()
+	call P_CrossCompileAtlas()
+	let $CROSS_COMPILE='/media/data/projet/atlas/atlas_master_project_1.3.y/buildroot/output/host/usr/bin/arm-linux-'
 endf
 
 fu! P_CrossCompileLNS()
