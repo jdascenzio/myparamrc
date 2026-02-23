@@ -41,7 +41,7 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id davmail
 
 # linphone
-exec --no-startup-id linphone
+exec --no-startup-id /home/julien/Applications/Linphone-6.0.1-CallEdition-x86_64_6b728651345a472b3ab78ba0ae6db907.AppImage
 
 # Pignin
 assign [class="Pidgin"] "4:chat"
@@ -52,8 +52,8 @@ assign [class="VirtualBox Manager"] "5:Win"
 exec --no-startup-id virtualbox
 
 # Office
-assign [class="libreoffice-startcenter"] "6:Office"
-exec --no-startup-id libreoffice
+assign [class="joplin"] "6:Joplin"
+exec --no-startup-id joplin
 
 # Mail
 assign [class="thunderbird-default"] "7:Mail"
@@ -61,7 +61,7 @@ exec --no-startup-id thunderbird
 
 # slack
 assign [class="Slack"] "8:Slack"
-exec --no-startup-id slack
+exec --no-startup-id flatpak run com.slack.Slack
 
 # caja
 assign [class="Caja"] "9:File manager"
