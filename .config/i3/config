@@ -52,8 +52,8 @@ assign [class="VirtualBox Manager"] "5:Win"
 exec --no-startup-id virtualbox
 
 # Office
-assign [class="joplin"] "6:Joplin"
-exec --no-startup-id joplin
+assign [class="Joplin"] "6:Joplin"
+exec --no-startup-id flatpak run net.cozic.joplin_desktop
 
 # Mail
 assign [class="thunderbird-default"] "7:Mail"
