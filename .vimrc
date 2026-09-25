@@ -21,7 +21,7 @@ packadd! gitgutter
 packadd! bufexplorer
 packadd! nerd-commenter
 " packadd! python-jedi
-" packadd! youcompleteme
+packadd! youcompleteme
 " packadd! omnicppcomplete
 packadd! xmledit
 " packadd! color_sampler_pack
@@ -29,12 +29,22 @@ packadd! xmledit
 
 syntax on
 
-" for php code checking
-let g:php_cs_fixer_path = "/home/julien/soft/php-cs-fixer/vendor/bin/php-cs-fixer"
-
 " set special string "<Leader>" to ','
 let mapleader=","
 let maplocalleader=","
+
+" youcompleteme option
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_use_clangd = 1
+let g:ycm_clangd_args = [
+\ '--compile-commands-dir=.',
+\ '--query-driver=/usr/bin/arm-none-eabi-gcc',
+\ ]
+" let g:ycm_auto_hover = ''
+nnoremap gd :YcmCompleter GoTo<CR>
+
+" for php code checking
+let g:php_cs_fixer_path = "/home/julien/soft/php-cs-fixer/vendor/bin/php-cs-fixer"
 
 " If 'cscopetag' is set, the commands ":tag" and CTRL-] as well as "vim -t"
 " will always use :cstag instead of the default :tag behavior
@@ -63,12 +73,12 @@ set background=dark
 let g:gruvbox_italic=1
 colorscheme gruvbox
 
-set foldmethod=syntax
-let c_no_comment_fold = 1
-set foldlevel=99
 
 " for gitgutter work faster
 set updatetime=500
+
+" GitGutter faible priorité pour voir en priorité les problèmes de youcompleteme
+let g:gitgutter_sign_priority = 1
 	
 " completion
 
@@ -164,7 +174,7 @@ endf
 fu! P_CrossCompileAtlas()
 	call CS_paratronic()
 	set noexpandtab                         " use tabs, not spaces
-	let $CROSS_COMPILE='/media/data/projet/atlas/atlas_master_project/buildroot/output/host/usr/bin/arm-linux-'
+	let $CROSS_COMPILE='../../buildroot/output/host/usr/bin/arm-linux-'
 	let $ARCH='arm'
 endf
 
